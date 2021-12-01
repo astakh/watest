@@ -35,6 +35,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
 
             let answer = await nodeInteraction.accountDataByKey(user.address+'_a',ballAddress,nodeUrl);
             document.querySelector(".contractadres").innerHTML = `contract is: ` + ballAddress;
+            document.querySelector(".message").innerHTML = `kuku`;
             document.querySelector(".answer").innerHTML = `the answer is: ${answer.value}`;
         } catch (e) {
             console.error('Question denied')
