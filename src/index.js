@@ -13,7 +13,8 @@ signer.setProvider(provider);
 
 document.querySelector(".js-invoke").addEventListener("click", async function () {
     try {
-        let question = document.getElementById('questionInput').value + Date.now();
+        let question = document.getElementById('questionInput').value();
+        document.getElementById("dappscriptdress").innerHTML = ballAddress;
         console.log('The question is '+ question);
 
         const user = await signer.login();
@@ -26,7 +27,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
             await signer.invoke({
                 dApp: ballAddress,
                 call: {
-                    function: "tellme",
+                    function: "paint",
                     args:[{"type": "string", "value": question}]
                 }
             }).broadcast({confirmations: 1}).then(resp => console.log(resp));
