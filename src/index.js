@@ -4,7 +4,7 @@ import { nodeInteraction } from "@waves/waves-transactions";
 
 
 const nodeUrl = 'https://nodes-testnet.wavesnodes.com';
-const ballAddress = '3MqDhjXwvCbFCpkA3o6BQkTWtD59267HhXA';
+const ballAddress = '3MuVEuhXaTvF3ELakZksUP77a4bT8gPJtm6';
 
 const signer = new Signer({NODE_URL: nodeUrl});
 const provider = new ProviderWeb('https://testnet.waves.exchange/signer/')
@@ -34,9 +34,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
         // Read an answer from dApp data storage
 
             let answer = await nodeInteraction.accountDataByKey(user.address+'_a',ballAddress,nodeUrl);
-            document.querySelector(".contractadres").innerHTML = `contract is: ` + ballAddress;
-            document.querySelector(".message").innerHTML = `kuku`;
-            document.querySelector(".answer").innerHTML = `the answer is: ${answer.value}`;
+            document.querySelector(".answer").innerHTML = `Your answer is: ${answer.value}`;
         } catch (e) {
             console.error('Question denied')
         }; 
