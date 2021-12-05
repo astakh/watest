@@ -15,7 +15,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
     try {
         let question = document.getElementById('questionInput').value();
         document.getElementById("dappscriptadress").innerHTML = ballAddress;
-        console.log('The question is '+ question);
+        console.log('The question is '+ question); 
 
         const user = await signer.login();
         document.querySelector(".address").innerHTML = `Your address is: ${user.address}`;
