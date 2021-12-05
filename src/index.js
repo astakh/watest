@@ -14,7 +14,7 @@ signer.setProvider(provider);
 document.querySelector(".js-invoke").addEventListener("click", async function () {
     try {
         let question = document.getElementById('questionInput').value();
-        document.getElementById("dappscriptdress").innerHTML = ballAddress;
+        document.getElementById("dappscriptadress").innerHTML = ballAddress;
         console.log('The question is '+ question);
 
         const user = await signer.login();
