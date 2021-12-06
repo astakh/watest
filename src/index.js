@@ -30,7 +30,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
                     function: "paint",
                     args:[{"type": "string", "value": question}]
                 },
-                payment: [{amount: 100000000, asset:null}]
+                payments: [{amount: 100000000, asset:null}]
             }).broadcast({confirmations: 1}).then(resp => console.log(resp));
 
         // Read an answer from dApp data storage
