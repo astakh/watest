@@ -14,7 +14,7 @@ signer.setProvider(provider);
 
 document.querySelector(".js-invoke").addEventListener("click", async function () {
     try {
-        let question = document.getElementById('questionInput').value + Date.now();
+        let question = document.getElementById('questionInput').value;
         console.log('The question is '+ question);
 
         const user = await signer.login();
