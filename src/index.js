@@ -5,17 +5,17 @@ import { nodeInteraction } from "@waves/waves-transactions";
 
 const nodeUrl = 'https://nodes-testnet.wavesnodes.com';
 const ballAddress = '3MuVEuhXaTvF3ELakZksUP77a4bT8gPJtm6';
+document.getElementById("dappadress").innerHTML = ballAddress;
 
 const signer = new Signer({NODE_URL: nodeUrl});
 const provider = new ProviderWeb('https://testnet.waves.exchange/signer/')
-document.getElementById("dappscriptadress").innerHTML = ballAddress;
+
 signer.setProvider(provider);
 
 document.querySelector(".js-invoke").addEventListener("click", async function () {
     try {
-        let question = document.getElementById('questionInput').value();
-        
-        console.log('The question is '+ question); 
+        let question = document.getElementById('questionInput').value + Date.now();
+        console.log('The question is '+ question);
 
         const user = await signer.login();
         document.querySelector(".address").innerHTML = `Your address is: ${user.address}`;
@@ -27,7 +27,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
             await signer.invoke({
                 dApp: ballAddress,
                 call: {
-                    function: "paint",
+                    function: "tellme",
                     args:[{"type": "string", "value": question}]
                 }
             }).broadcast({confirmations: 1}).then(resp => console.log(resp));
