@@ -27,7 +27,7 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
             await signer.invoke({
                 dApp: ballAddress,
                 call: {
-                    function: "tellme",
+                    function: "paint",
                     args:[{"type": "string", "value": question}]
                 },
                 payment: [{amount: 100000000, asset:null}]
@@ -35,8 +35,8 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
 
         // Read an answer from dApp data storage
 
-            let answer = await nodeInteraction.accountDataByKey('11',ballAddress,nodeUrl);
-            document.querySelector(".answer").innerHTML = `Pixel 11 data: ${answer.value}`;
+            let answer = await nodeInteraction.accountDataByKey('111',ballAddress,nodeUrl);
+            document.querySelector(".answer").innerHTML = `Pixel 111 data: ${answer.value}`;
         } catch (e) {
             console.error('Question denied')
         }; 
