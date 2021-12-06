@@ -8,13 +8,13 @@ const ballAddress = '3MuVEuhXaTvF3ELakZksUP77a4bT8gPJtm6';
 
 const signer = new Signer({NODE_URL: nodeUrl});
 const provider = new ProviderWeb('https://testnet.waves.exchange/signer/')
-
+document.getElementById("dappscriptadress").innerHTML = ballAddress;
 signer.setProvider(provider);
 
 document.querySelector(".js-invoke").addEventListener("click", async function () {
     try {
         let question = document.getElementById('questionInput').value();
-        document.getElementById("dappscriptadress").innerHTML = ballAddress;
+        
         console.log('The question is '+ question); 
 
         const user = await signer.login();
