@@ -34,8 +34,8 @@ document.querySelector(".js-invoke").addEventListener("click", async function ()
 
         // Read an answer from dApp data storage
 
-            let answer = await nodeInteraction.accountDataByKey(user.address+'_a',ballAddress,nodeUrl);
-            document.querySelector(".answer").innerHTML = `Your answer is: ${answer.value}`;
+            let answer = await nodeInteraction.accountDataByKey('11',ballAddress,nodeUrl);
+            document.querySelector(".answer").innerHTML = `Pixel 11 data: ${answer.value}`;
         } catch (e) {
             console.error('Question denied')
         }; 
